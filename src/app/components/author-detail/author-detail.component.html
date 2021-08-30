@@ -1,0 +1,19 @@
+<div class="author" *ngIf="author">
+  <h2>{{author.name}}</h2>
+  <br>
+  <span *ngFor="let keyword of author.keywords">
+    <a>{{keyword}}</a>
+  </span>
+
+  <div *ngIf="author.bio">{{author.bio.value}}</div>
+
+  <br>
+  <!-- Books -->
+  <div *ngIf="author.books && author.books.length" class="books">
+    <div class="bookinformation">
+      <h3>Books</h3>
+    </div>
+
+    <app-books-list [books]="author.books"></app-books-list>
+  </div>
+</div>

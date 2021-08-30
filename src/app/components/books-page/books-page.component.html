@@ -1,0 +1,11 @@
+<div class="root">
+    <br>
+    <app-search-books [requestOL]="true" (booksEvent)="searchResult($event)"></app-search-books>
+
+    <app-new-book (saveBookEvent)="saveBook($event)"></app-new-book>
+
+    <br>
+    <app-books-list [books]="books"></app-books-list>
+
+    <br>
+</div>

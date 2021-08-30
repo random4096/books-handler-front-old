@@ -1,0 +1,13 @@
+<div class="root">
+
+  <div class="container">
+    <div>
+      <div class="author" *ngFor="let author of authors;  index as i" (click)="selectAuthor(i)">
+        {{author.name | uppercase}}
+      </div>
+    </div>
+    <div class="author-detail" *ngIf="selectedAuthor !== -1">
+      <app-author-detail [author]="authors[selectedAuthor]"></app-author-detail>
+    </div>
+  </div>
+</div>

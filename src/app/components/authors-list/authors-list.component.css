@@ -1,0 +1,25 @@
+.root {
+    background-color: #b0cfee;
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+
+.author {
+    font-size: large;
+    border-style: ridge;
+    border-color: #0a2b4d;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #578cc0;
+    color: whitesmoke;
+}
+
+.container {
+    display: flex;
+}
+
+.author-detail {
+    width: 70%;
+}

@@ -1,0 +1,21 @@
+<button class="btn btn-secondary" (click)="sortBy('title')">Sort by title</button>
+<div class="btn-group">
+    <input type="checkbox" class="btn-check" id="saved">
+    <label (click)="updateFilter('id')" class="btn btn-outline-primary" for="saved">Saved</label>
+
+    <input type="checkbox" class="btn-check" id="readed">
+    <label (click)="updateFilter('read')" class="btn btn-outline-success" for="readed">Readed</label>
+
+    <input type="checkbox" class="btn-check" id="owned">
+    <label (click)="updateFilter('owned')" class="btn btn-outline-warning" for="owned">Owned</label>
+
+    <input type="checkbox" class="btn-check" id="lend">
+    <label (click)="updateFilter('lendPersonName')" class="btn btn-outline-info" for="lend">Lend</label>
+</div>
+<br>
+
+<div *ngFor="let book of books; index as i;">
+    <app-book-detail (saveBookEvent)="saveBook(i)" (updateBookEvent)="updateBook(i)" [book]="book">
+
+    </app-book-detail>
+</div>

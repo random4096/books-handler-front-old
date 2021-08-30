@@ -1,0 +1,11 @@
+
+<input [(ngModel)]="searchFieldValue" type="text" class="search" placeholder="Search...">
+<select [(ngModel)]="searchMode">
+    <option value="isbn">ISBN</option>
+    <option value="lccn">LCCN</option>
+    <option value="title">Title</option>
+</select>
+<input id="requestOL" type="checkbox" [(ngModel)]="requestOL"/>
+<label for="requestOL">OL</label>
+<button (click)="search()">Search</button>
+

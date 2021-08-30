@@ -1,0 +1,60 @@
+<div class="root" *ngIf="book">
+    <div class="summary" [ngClass]="{'saved' : book.id}">
+        <img *ngIf="book.data.cover" src="{{book.data.cover.small}}" alt="Flowers in Chania">
+
+        <div class="container" *ngIf="!onEditMode; else editBlock">
+            <span class="title" (click)="showDetail()">
+                {{book.data.title}}
+            </span>
+            <div *ngIf="book.data.authors">
+                <span *ngFor="let author of book.data.authors | keyvalue">
+                    <span *ngIf="author.value != book.data.authors[0]">, </span>
+                    {{author.value.name}}
+                </span>
+            </div>
+            <span>{{book.data.publish_date}}</span>
+        </div>
+        <ng-template #editBlock>
+            <app-new-book [book]="book" (saveBookEvent)="saveBook()"></app-new-book>
+        </ng-template>
+
+
+        <span class="options" *ngIf="book.id; else saveBookBlock">
+            <label class="badge" [ngClass]="{'read' : book.read}">
+                Read
+                <input hidden type="checkbox" [(ngModel)]="book.read" (change)="updateBook()" value="Read">
+            </label>
+            &nbsp;
+            <label class="badge" [ngClass]="{'owned' : book.owned}">
+                Owned
+                <input hidden type="checkbox" [(ngModel)]="book.owned" (change)="updateBook()" value="Owned">
+            </label>
+            &nbsp;
+
+            <label class="badge" [ngClass]="{ 'bg-primary': onEditMode }">
+                Edit
+                <input hidden type="checkbox" [(ngModel)]="onEditMode">
+            </label>
+            &nbsp;
+
+            <div *ngIf="!book.lendPersonName; else lendPersonBlock">
+                <app-lend-to-modal [book]="book"></app-lend-to-modal>
+            </div>
+            <ng-template #lendPersonBlock>
+                
+                <label class="badge bg-info text-dark">
+                    {{book.lendPersonName}}: Get back
+                    <input hidden type="checkbox" (change)="getBack()">
+                </label>
+            </ng-template>
+        </span>
+        <ng-template #saveBookBlock>
+            <span class="option">
+                <label class="badge">
+                    Save
+                    <input hidden type="checkbox" (click)="saveBook()">
+                </label>
+            </span>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+.root {
+    border-style: ridge;
+    border-color: #0a2b4d;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.saved {
+    background-color: #578cc0;
+}
+
+.title {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.options {
+}
+
+.badge {
+    padding: 5px;
+    color: whitesmoke;
+    background-color: gray;
+    text-align: center;
+}
+
+.read {
+    color: rgb(193, 223, 193);
+    background-color: green;
+}
+
+.owned {
+    color: rgb(236, 228, 206);
+    background-color: goldenrod;
+}
+
+
+
+
+
+
+.info {
+    padding: 10px;
+}
+
+.olKey {
+    font-style: italic;
+}
+
+.description {
+    margin: 5px;
+}
+
+

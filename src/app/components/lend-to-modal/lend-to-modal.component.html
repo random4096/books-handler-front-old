@@ -1,0 +1,25 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Lend to</h4>
+        <button type="button" class="close" (click)="modal.dismiss()">
+            <span>&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <select [(ngModel)]="selectedPerson">
+            <option *ngFor="let person of persons" [ngValue]="person">{{person.name}}</option>
+        </select>
+
+        &nbsp;
+        <input [(ngModel)]="newPersonName">
+        &nbsp;
+        <button class="btn btn-success btn-sm" (click)="addPerson()">Add</button>
+    </div>
+    <div class="modal-footer">
+        <button [disabled]="!selectedPerson" type="button" class="btn btn-outline-dark"
+            (click)="modal.close()">Save</button>
+    </div>
+</ng-template>
+
+<button class="btn badge" (click)="openLendModal(content)">Lend</button>

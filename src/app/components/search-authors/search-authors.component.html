@@ -1,0 +1,9 @@
+<input [(ngModel)]="searchFieldValue" type="text" class="search" placeholder="Search...">
+<button (click)="search()">Search</button>
+<div *ngIf="authors">
+    <div *ngFor="let author of authors; index as i">
+        <div [ngClass]="{'saved' : author.saved}">{{author.name | uppercase}}</div>
+        {{author.key}}
+        <button [hidden]="author.saved" (click)="saveAuthor(author)">Save</button>
+    </div>
+</div>

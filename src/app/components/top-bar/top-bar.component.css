@@ -1,0 +1,17 @@
+.root {
+    width: 100%;
+    background-color: #578cc0;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    margin: 20px;
+    padding: 10px;
+    font-size: x-large;
+    color: whitesmoke;
+    background-color: #0a2b4d;
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+}
